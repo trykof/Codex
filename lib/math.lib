@@ -1,0 +1,15 @@
+#dlluse cdxmath.dll
+
+math = {
+	"pow" = function(num pow) { return _pow(num pow) }
+	"abs" = function(num) { return _abs(num) }
+	"sqrt" = function(num) { return _sqrt(num) }
+	"cos" = function(num) { return _cos(num) }
+	"sin" = function(num) { return _sin(num) }
+	"tan" = function(num) { return _tan(num) }
+	"const" = {
+		"pi" = 3.141592653
+		"tau" = 6.283185307
+		"e" = 2.718281828
+	}	
+}

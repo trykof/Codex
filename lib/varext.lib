@@ -1,0 +1,14 @@
+#dlluse varext.dll
+#use lib\exception.lib
+
+varext = {
+	"at" = function(obj iter) { return _at(obj iter) } 
+	"toarray" = function(obj) {
+		if(type(obj) != "string") { exception.throw("Input variable type doesn't string." invalidTypeException) }
+		res = []
+		for(i = 0;i < size(obj);i += 1) {
+			res += [varext.at(obj i)]
+		}
+		return res
+	}
+}

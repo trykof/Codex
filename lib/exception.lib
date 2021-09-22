@@ -1,0 +1,36 @@
+#use lib\system.lib
+
+baseException = {
+	"getInstance" = function() { return "baseException" }
+}
+
+outOfRangeException = {
+	"getInstance" = function() { return "outOfRangeException" }
+}
+
+invalidOperationException = {
+	"getInstance" = function() { return "invalidOperationException" }
+}
+
+mathException = {
+	"getInstance" = function() { return "mathException" }
+}
+
+runtimeException = {
+	"getInstance" = function() { return "runtimeException" }
+}
+
+nullArgumentException = {
+	"getInstance" = function() { return "nullArgumentException" }
+}
+
+invalidTypeException = {
+	"getInstance" = function() { return "invalidTypeException" }
+}
+
+exception = {
+	"throw" = function(message exClass) { print("Unhandled " exClass.getInstance() ": " message ". ")
+										  exception.catchHandler()
+										}
+	"catchHandler" = function() { print("Press any key to exit..."); readline(); system.exit(-1) }
+}

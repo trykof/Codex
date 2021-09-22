@@ -1,0 +1,15 @@
+#dlluse time_point.dll
+#dlluse time.dll
+
+time = {
+	"point" = {
+		"drop_point" = function() { drop_point() }
+		"pickup_point" = function() { return pickup_point() }
+	}
+	"t_sec" = function() { return get_sec() }
+	"t_min" = function() { return get_min() }
+	"t_hour" = function() { return get_hour() }
+	"t_day" = function() { return get_day() }
+	"t_mon" = function() { return (get_mon()+1) }
+	"t_year" = function() { return (get_year()+1900) }
+}

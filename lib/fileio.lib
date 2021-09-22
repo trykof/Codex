@@ -1,0 +1,22 @@
+#dlluse io.dll
+#use lib\exception.lib
+
+fileio = {
+	"readAll" = function(fname) { return f_read(fname) }
+	"writeAll" = function(fname content) { f_write(fname content) }
+	"appendAll" = function(fname content) { f_append(fname content) }
+	"appendLine" = function(fname line) {
+		content = [line]
+		f_append(fname content)
+	}
+	"writeLine" = function(fname lineNum line) {
+		file = f_read(fname)
+		if(size(file) < lineNum) { exception.throw("Line number bigger than file lines count." outOfRangeException) }
+		file[lineNum] = line
+		f_write(fname file)
+	}
+	"readLine" = function(fname lineNum) { 
+		if(size(f_read(fname)) < lineNum) { exception.throw("Line number bigger than file lines count." outOfRangeException) }
+		return f_read(fname)[lineNum] 
+	}
+}

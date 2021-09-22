@@ -1,0 +1,5 @@
+#dlluse random.dll
+
+rand = {
+	"random" = function(from to) { return random(from to) }
+}

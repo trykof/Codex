@@ -1,0 +1,7 @@
+#dlluse system.dll
+
+system = {
+	"exit" = function(code) { c_exit(code) }
+	"start" = function(path) { c_start(path) }
+	"delay" = function(ms) { c_delay(ms) }
+}

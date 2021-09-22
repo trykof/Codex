@@ -1,0 +1,6 @@
+#dlluse cryptography.dll
+
+cryptography = {
+	"SHA256" = function(input) { return sha256(input) }
+	"MD5" = function(input) { return md5(input) }
+}
